@@ -69,3 +69,245 @@ body, html {
 .info-section h5 {
   font-weight: bold; /* Torna o texto em negrito */
 }
+
+
+/* Título Trabalhos Remotos */
+.section-title {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 30px
+}
+
+
+.remote-jobs-box {
+  font-size: 20px;
+  font-family: 'jura', sans-serif;
+  position: relative;
+  padding: 10px; /* reduzido para aproximar os cantos do conteúdo */
+}
+
+
+
+/* CANTOS ESQUERDOS */
+.remote-jobs-box::before,
+.remote-jobs-box::after {
+  content: "";
+  position: absolute;
+  width: 50px; 
+  height: 50px;
+}
+
+/* canto superior esquerdo */
+.remote-jobs-box::before {
+  top: 5px;
+  left: 5px;
+  border-top: 10px solid black;
+  border-left: 10px solid black;
+}
+
+
+/* CANTOS DIREITOS */
+.remote-jobs-box .corner-top-right,
+.remote-jobs-box .corner-bottom-right {
+  content: "";
+  position: absolute;
+  width: 50px; 
+  height: 50px;
+  pointer-events: none;
+}
+
+
+/* canto inferior direito */
+.remote-jobs-box .corner-bottom-right {
+  bottom: 5px;
+  right: 5px;
+  border-bottom: 10px solid black;
+  border-right: 10px solid black;
+}
+
+
+/* Section Acomodacao */ 
+.dual-section {
+  display: flex;
+  min-height: 40vh;
+  width: 100%;
+}
+
+.image-side {
+  flex: 1;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-side {
+  flex: 1;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem;
+  position: relative;
+}
+
+.section-text {
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.discover-btn {
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.discover-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Estilo do botão Descobrir */
+.discover-btn {
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 10px 30px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.discover-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Botão de rolar para o topo (scroll) */
+.scroll-top-btn {
+  position: absolute;
+  bottom: 20px; /* distância do fundo da imagem preta */
+  right: 20px;  /* distância da lateral direita */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* 🔵 deixa o botão redondo */
+  background-color: rgb(0, 0, 0);
+  color: black;
+  font-size: 24px;
+  font-family: jura, sans-serif;
+  font-weight: bold;
+  border: 2px solid rgb(255, 255, 255);
+  cursor: pointer;
+  color: white;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background: rgba(180, 155, 44, 0.25);
+  color: white;
+}
+
+/* Section locais */
+.dual-section.reverse .section-text {
+  color: black;
+}
+
+.dual-section.reverse .content-side {
+  background-color:  rgba(180, 155, 44, 0.25)
+}
+
+.dual-section {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+.image-side,
+.content-side {
+  flex: 1;
+  min-height: 100%; /* Garante que imagem e conteúdo tenham a mesma altura */
+}
+
+
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* Centraliza a imagem */
+}
+
+.content-side {
+  flex: 1;
+  background-color: black;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 9rem;
+  position: relative;
+}
+
+.section-text {
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.right-half {
+  background-color: #000;
+  color: rgb(0, 0, 0);
+  flex: 1;
+  position: relative; /* 🔥 necessário para o botão funcionar no lugar certo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dual-section.reverse .scroll-top-btn {
+  left: 20px;              /* Move para o lado esquerdo */
+  right: auto;             /* Remove o valor padrão à direita */
+  background-color:  rgba(180, 155, 44, 0);   /* Cor de fundo vermelha */
+  border: 2px solid rgb(0, 0, 0); /* Borda branca para contraste */
+  color: rgb(0, 0, 0);            /* Ícone branco */
+}
+
+.dual-section.reverse .scroll-top-btn:hover {
+  background-color:  rgba(180, 155, 44, 0.25);
+  color: rgb(0, 0, 0);
+}
+
+/* Estilo do botão Descobrir */
+.discover-btn {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  padding: 10px 30px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+
+.discover-btn:hover {
+  background: rgb(0, 0, 0);
+  color: black;
+}
+
