@@ -1,30 +1,32 @@
-
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'jura', sans-serif;
+  font-family: 'Jura', sans-serif;
   font-size: 25px;
   font-weight: bold;
 }
 
+
 /* Seção Hero */
 .hero {
-  background-image: url('../Projecto_01/imagens/Hero.png');
+  background-image: url('../RepositorioProjeto01/imagens/Hero.png');
   background-size: cover;
   background-position: top center;
   background-origin: padding-box;
-  height: 1080px;
+  height: 100vh; 
   position: relative;
 }
 
 .hero-title {
-  font-family: 'josefin slab', sans-serif;
+  font-family: 'Josefin Slab', sans-serif;
   font-size: 25px;
   color: #ffffff;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 1rem; /* Pequeno padding para evitar corte de texto em telas menores */
 }
 
 .hero-title h1 {
@@ -32,33 +34,89 @@ body, html {
   font-weight: bold;
 }
 
+/* Responsividade */
+@media (max-width: 1024px) {
+  .hero-title h1 {
+    font-size: 3rem;
+  }
+
+  body, html {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title h1 {
+    font-size: 2.5rem;
+  }
+
+  body, html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-position: center center; /* Melhor visual em telas pequenas */
+  }
+
+  .hero-title h1 {
+    font-size: 2rem;
+  }
+
+  body, html {
+    font-size: 18px;
+  }
+}
+
+
 /* Seção de conteúdo inferior */
 .info-section {
   background: rgba(180, 155, 44, 0.25);
-  font-family: jura, sans-serif;
-  font-size: 43px;
-  align-items: center;
+  font-family: 'Jura', sans-serif;
   color: #000000;
   font-size: 1.2rem;
   min-height: 40vh;
   display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  align-items: center;
 }
 
-/* Linha vertical entre as colunas */
-.info-section .col-md-6:first-child {
-  border-right: 2px solid #000000; /* Linha vertical preta */
+/* Colunas dentro da info-section */
+.info-section .col-md-6 {
+  flex: 1 1 100%;
+  padding: 1rem;
 }
 
+/* Linha vertical apenas em telas médias ou maiores */
+@media (min-width: 768px) {
+  .info-section .col-md-6 {
+    flex: 1;
+  }
 
+  .info-section .col-md-6:first-child {
+    border-right: 2px solid #000000;
+  }
+}
+
+/* Slogan */
 .slogan {
   font-size: 1.5rem;
-  font-family: 'jura', sans-serif;
-  size: 60x;
-  letter-spacing: 10px;
-  color: #000000;
+  letter-spacing: 6px;
   text-align: center;
   font-weight: 300;
   padding: 20px;
+  color: #000000;
+}
+
+/* Ajuste de slogan em telas menores */
+@media (max-width: 768px) {
+  .slogan {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    padding: 15px;
+  }
 }
 
 .highlight {
@@ -66,131 +124,137 @@ body, html {
   font-weight: 600;
 }
 
-.info-section h5 {
-  font-weight: bold; /* Torna o texto em negrito */
-}
-
-
 /* Título Trabalhos Remotos */
-.section-title {
-  margin-bottom: 15px;
+.section-title,
+.info-section h5 {
   font-weight: bold;
-  font-size: 30px
+  font-size: 30px;
+  text-align: center;
 }
 
-
+/* Caixa com links de trabalhos */
 .remote-jobs-box {
   font-size: 20px;
-  font-family: 'jura', sans-serif;
+  font-family: 'Jura', sans-serif;
   position: relative;
-  padding: 10px; /* reduzido para aproximar os cantos do conteúdo */
+  line-height: 22px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
+/* Ajuste de listas */
+.remote-jobs-box ul {
+  list-style: none;
+  padding: 10px;
+  margin-left: 50px;
+}
 
-
-/* CANTOS ESQUERDOS */
+/* Cantos decorativos */
 .remote-jobs-box::before,
 .remote-jobs-box::after {
   content: "";
   position: absolute;
-  width: 50px; 
-  height: 50px;
+  width: 30px;
+  height: 30px;
 }
 
 /* canto superior esquerdo */
 .remote-jobs-box::before {
   top: 5px;
-  left: 5px;
+  left: 45px;
   border-top: 10px solid black;
   border-left: 10px solid black;
 }
 
-
-/* CANTOS DIREITOS */
+/* cantos direitos */
 .remote-jobs-box .corner-top-right,
 .remote-jobs-box .corner-bottom-right {
   content: "";
   position: absolute;
-  width: 50px; 
-  height: 50px;
+  width: 30px;
+  height: 30px;
   pointer-events: none;
 }
-
 
 /* canto inferior direito */
 .remote-jobs-box .corner-bottom-right {
   bottom: 5px;
-  right: 5px;
+  right: 0px;
   border-bottom: 10px solid black;
   border-right: 10px solid black;
 }
 
 
-/* Section Acomodacao */ 
-.dual-section {
+
+/* Section Acomodacao/Descobrir */
+
+.acomodacao-section {
   display: flex;
-  min-height: 40vh;
   width: 100%;
+  height: 60vh; /* Altura ajustável */
+  overflow: hidden; /* impede overflow lateral visível */
+  position: relative;
 }
 
 .image-side {
-  flex: 1;
-}
-
-.image-side img {
-  width: 100%;
+  flex: 1; /* Menor proporção */
   height: 100%;
-  object-fit: cover;
 }
 
 .content-side {
-  flex: 1;
+  flex: 1.5; /* maior que a imagem */
   background-color: black;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem;
+  text-align: center;
+
+  margin-left: -20vw; /* "avança" para a esquerda */
+  z-index: 1;
   position: relative;
 }
 
-.section-text {
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.content-side h2 {
   font-size: 25px;
-  letter-spacing: 2px;
-  text-align: center;
+  color: #ffffff;
   margin-bottom: 2rem;
+  line-height: 1.4;
 }
 
-.discover-btn {
+.descobrir-btn {
   border: 2px solid white;
   border-radius: 30px;
-  padding: 10px 30px;
+  padding: 12px 40px;
+  background-color: transparent;
   color: white;
-  text-decoration: none;
   font-size: 1.2rem;
-  transition: background 0.3s;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
-.discover-btn:hover {
-  background: white;
+.descobrir-btn:hover {
+  background-color: white;
   color: black;
 }
 
-/* Estilo do botão Descobrir */
-.discover-btn {
-  border: 2px solid white;
-  border-radius: 30px;
-  padding: 10px 30px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: background 0.3s;
-}
-
-.discover-btn:hover {
-  background: white;
-  color: black;
+/* Hover do botão da esquerda */
+.discover-btn-left:hover {
+  background-color: rgb(0, 0, 0); /* Cor de fundo quando passar o mouse */
+  color: rgb(255, 255, 255); /* Cor do texto quando passar o mouse */
 }
 
 /* Botão de rolar para o topo (scroll) */
@@ -221,7 +285,9 @@ body, html {
   color: white;
 }
 
-/* Section locais */
+
+
+/* Section locais e EXPLORAR */
 .dual-section.reverse .section-text {
   color: black;
 }
@@ -233,16 +299,15 @@ body, html {
 .dual-section {
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  height: 60vh; /* ou 60vh, etc */
+  margin: 0 auto;
 }
-
 
 .image-side,
 .content-side {
-  flex: 1;
+  flex: -10;
   min-height: 100%; /* Garante que imagem e conteúdo tenham a mesma altura */
 }
-
 
 
 .image-side img {
@@ -266,6 +331,7 @@ body, html {
 
 .section-text {
   font-size: 25px;
+  color: #ffffff;
   letter-spacing: 2px;
   text-align: center;
   margin-bottom: 2rem;
@@ -275,7 +341,7 @@ body, html {
   background-color: #000;
   color: rgb(0, 0, 0);
   flex: 1;
-  position: relative; /* 🔥 necessário para o botão funcionar no lugar certo */
+  position: relative; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -295,7 +361,96 @@ body, html {
   color: rgb(0, 0, 0);
 }
 
-/* Estilo do botão Descobrir */
+/* Estilo do botão Explorar */
+.discover-btn-light {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  padding: 10px 30px;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.discover-btn-light:hover {
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+
+
+
+/* Section Blog */
+.blog-section {
+  width: 100vw;               /* Ocupa toda a largura da janela */
+  height: 60vh;               /* Ajuste a altura conforme necessário */
+  position: relative;
+  overflow: hidden;           /* Garante que nada vaze para fora */
+}
+
+.blog-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border-radius: 30px;
+  padding: 15px 100px;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 2;
+}
+.blog-btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+
+
+/*Footer */
+.footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer-title {
+  font-size: 35px;
+  margin-bottom: 2rem;
+  letter-spacing: 0px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-icons img {
+  width: 60px; 
+  height: 60px;
+  object-fit: contain;
+}
+
+.footer-subtitle {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+/* Estilo do botão BLOG */
 .discover-btn {
   border: 2px solid rgb(0, 0, 0);
   border-radius: 30px;
@@ -310,4 +465,5 @@ body, html {
   background: rgb(0, 0, 0);
   color: black;
 }
+
 
