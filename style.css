@@ -6,7 +6,25 @@ body, html {
   font-weight: bold;
 }
 
+.nav-links {
+  margin-top: 35px; /* Aumente o valor conforme necessário */
+  margin-right: 45px; /* Aumente o valor conforme necessário */
+}
 
+  nav a {
+    color: white !important;
+    font-weight: 500;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+
+     .logo {
+    height: 40px;
+    margin-top: 40px;
+  }
+
+  
 /* Seção Hero */
 .hero {
   background-image: url('../RepositorioProjeto01/imagens/Hero.png');

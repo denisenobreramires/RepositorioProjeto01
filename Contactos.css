@@ -50,9 +50,9 @@ body {
     background-color: rgba(0, 0, 0, 0.6); /* Aumente o valor para escurecer mais (ex: 0.7 ou 0.8) */
     z-index: -1;
   }
-  
-  .logo {
+    .logo {
     height: 40px;
+    margin-top: 50px;
   }
   
 
@@ -108,6 +108,9 @@ form {
   background-color: white;
   color: black;
 }
+
+
+
 
 
 
