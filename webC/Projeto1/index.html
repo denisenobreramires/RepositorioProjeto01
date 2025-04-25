@@ -14,40 +14,31 @@
 
   <!-- CSS personalizado -->
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-  <!-- Seção Hero -->
-  <header class="hero">
-    <!-- Navegação superior direita -->
-<nav class="d-flex justify-content-between align-items-center p-4 px-5">
-  <!-- Logo -->
-  <a href="index.html" class="navbar-brand">
-    <img src="../RepositorioProjeto01/imagens/lines-leaning-solid 1.png" alt="Logo Living Around" class="logo">
-  </a>
 
-  <!-- Links -->
-  <div class="d-flex gap-3 nav-links">
-    <a href="Acomodacao.html" class="text-decoration-none">ACOMODAÇÃO</a>
-    <a href="locais.html" class="text-decoration-none">LOCAIS</a>
-    <a href="blog.html" class="text-decoration-none">BLOG</a>
-    <a href="Contactos.html" class="text-decoration-none">CONTACTOS</a>
-  </div>
-</nav>
+<header class="hero">
+  <!-- Div só para a imagem de fundo -->
+  <div class="hero-bg"></div>
 
-    <!-- Título principal -->
-    <div class="hero-title text-center">
-      <h1>LIVING AROUND</h1>
+  <!-- Navegação -->
+  <nav class="d-flex justify-content-between align-items-center p-4 px-5">
+    <a href="index.html" class="navbar-brand">
+      <img src="imagens/lines-leaning-solid 1.png" alt="Logo Living Around">
+    </a>
+    <div class="d-flex gap-3 nav-links">
+      <a href="Acomodacao.html" class="text-decoration-none">ACOMODAÇÃO</a>
+      <a href="locais.html" class="text-decoration-none">LOCAIS</a>
+      <a href="blog.html" class="text-decoration-none">BLOG</a>
+      <a href="Contactos.html" class="text-decoration-none">CONTACTOS</a>
     </div>
+  </nav>
 
+  <!-- Título -->
+  <div class="hero-title text-center">
+    <h1>LIVING AROUND</h1>
+  </div>
+</header>
 
-  </header>
-
-</body>
-</html>
-
-    
-    </header>
 
      <!-- Seção Informações -->
 <section class="info-section d-flex flex-column flex-md-row p-5">
@@ -88,15 +79,22 @@
 
 <!-- Seção estilo "Section Acomodacao Descobrir" -->
 <section class="acomodacao-section">
-  <div class="image-side">
-    <img src="../RepositorioProjeto01/imagens/pexels-gya-den-768256-2303781 2.png" alt="imagem carrinha">
+  <div class="main-container"> <!-- Contêiner principal -->
+    <div class="image-side">
+      <img src="imagens/pexels-gya-den-768256-2303781 2.png" alt="imagem carrinha">
+    </div>
+
+    <div class="content-side">
+      <h2>Descubra o seu novo<br>escritório</h2>
+      <a href="#" class="descobrir-btn">Descobrir</a>
+    </div>
   </div>
 
-  <div class="content-side">
-    <h2>Descubra o seu novo<br>escritório</h2>
-    <a href="#" class="descobrir-btn">Descobrir</a>
-  </div>
- 
+ <!-- Botão para rolar até o topo -->
+<button class="scroll-top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+  <img src="imagens/Arrow_Up.png" alt="Scroll para o topo" class="scroll-top-img">
+</button>
+
 </section>
 
 <!-- Section Locais -->
@@ -113,13 +111,13 @@
 
   <!-- Imagem à direita -->
   <div class="image-side">
-    <img src="../RepositorioProjeto01/imagens/pexels-thatguycraig000-1546898 2.png" alt="imagem estrada">
+    <img src="imagens/pexels-thatguycraig000-1546898 2.png" alt="imagem estrada">
   </div>
 </section>
 
 <!-- Section Blog -->
 <section class="blog-section">
-  <img src="../RepositorioProjeto01/imagens/pexels-thepaintedsquare-583848 1.png" alt="Imagem do Blog">
+  <img src="imagens/pexels-thepaintedsquare-583848 1.png" alt="Imagem do Blog">
   <a href="#blog" class="blog-btn">BLOG</a>
 
   <!-- Aqui está o botão "BLOG" -->
@@ -138,9 +136,9 @@
   <h2 class="footer-title">LIVING AROUND</h2>
 
   <div class="footer-icons">
-    <img src="../RepositorioProjeto01/imagens/face.png" alt="Facebook">
-    <img src="../RepositorioProjeto01/imagens/insta.png" alt="Instagram">
-    <img src="../RepositorioProjeto01/imagens/twitter.png" alt="twitter">
+    <img src="/imagens/face.png" alt="Facebook">
+    <img src="imagens/insta.png" alt="Instagram">
+    <img src="imagens/twitter.png" alt="Twitter">
   </div>
 
   <p class="footer-subtitle">Powered by Cesae Digital</p>

@@ -20,21 +20,39 @@ body, html {
 
 
      .logo {
-    height: 40px;
+    height: 30px;
     margin-top: 40px;
   }
 
-  
-/* Seção Hero */
-.hero {
-  background-image: url('../RepositorioProjeto01/imagens/Hero.png');
-  background-size: cover;
-  background-position: top center;
-  background-origin: padding-box;
-  height: 100vh; 
+  .hero {
   position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
+/* Nova div com imagem de fundo */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('imagens/hero.png'); /* Ajusta o caminho */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Conteúdo sobre o fundo */
+nav,
+.hero-title {
+  position: relative;
+  z-index: 1;
+}
+
+/* Título */
 .hero-title {
   font-family: 'Josefin Slab', sans-serif;
   font-size: 25px;
@@ -44,13 +62,14 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  padding: 0 1rem; /* Pequeno padding para evitar corte de texto em telas menores */
+  padding: 0 1rem;
 }
 
 .hero-title h1 {
   font-size: 4rem;
   font-weight: bold;
 }
+
 
 /* Responsividade */
 @media (max-width: 1024px) {
@@ -156,7 +175,7 @@ body, html {
   font-family: 'Jura', sans-serif;
   position: relative;
   line-height: 22px;
-  padding: 10px;
+  padding: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -166,7 +185,7 @@ body, html {
 /* Ajuste de listas */
 .remote-jobs-box ul {
   list-style: none;
-  padding: 10px;
+  padding: -30px;
   margin-left: 50px;
 }
 
@@ -175,14 +194,14 @@ body, html {
 .remote-jobs-box::after {
   content: "";
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
 }
 
 /* canto superior esquerdo */
 .remote-jobs-box::before {
-  top: 5px;
-  left: 45px;
+  top: -12px;
+  left: 350px;
   border-top: 10px solid black;
   border-left: 10px solid black;
 }
@@ -192,15 +211,15 @@ body, html {
 .remote-jobs-box .corner-bottom-right {
   content: "";
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   pointer-events: none;
 }
 
 /* canto inferior direito */
 .remote-jobs-box .corner-bottom-right {
   bottom: 5px;
-  right: 0px;
+  right: 310px;
   border-bottom: 10px solid black;
   border-right: 10px solid black;
 }
@@ -208,22 +227,30 @@ body, html {
 
 
 /* Section Acomodacao/Descobrir */
-
 .acomodacao-section {
   display: flex;
+  justify-content: center; /* Centraliza a seção no eixo horizontal */
   width: 100%;
-  height: 60vh; /* Altura ajustável */
-  overflow: hidden; /* impede overflow lateral visível */
+  height: 55vh; /* Altura ajustável */
+  overflow: hidden; /* Impede overflow lateral visível */
   position: relative;
+}
+
+.main-container {
+  display: flex; /* Alinha as divs horizontalmente */
+  width: 100%;
+  height: 100%;
 }
 
 .image-side {
   flex: 1; /* Menor proporção */
-  height: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza a imagem no eixo horizontal */
+  align-items: flex-end; /* Alinha a imagem ao fundo da div */
 }
 
 .content-side {
-  flex: 1.5; /* maior que a imagem */
+  flex: 1.5; /* Maior que a imagem */
   background-color: black;
   color: white;
   display: flex;
@@ -232,17 +259,17 @@ body, html {
   align-items: center;
   padding: 2rem;
   text-align: center;
-
-  margin-left: -20vw; /* "avança" para a esquerda */
+  margin-left: -20vw; /* "Avança" para a esquerda */
   z-index: 1;
   position: relative;
 }
 
 .image-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+  width: 100%; /* Garante que a imagem ocupe toda a largura */
+  height: auto; /* Ajusta a altura automaticamente */
+  max-height: 100%; /* Garante que a altura não ultrapasse a altura da div */
+  object-fit: cover; /* A imagem vai cobrir toda a área disponível */
+  object-position: bottom; /* A parte inferior da imagem será visível */
 }
 
 .content-side h2 {
@@ -285,10 +312,6 @@ body, html {
   border-radius: 50%; /* 🔵 deixa o botão redondo */
   background-color: rgb(0, 0, 0);
   color: black;
-  font-size: 24px;
-  font-family: jura, sans-serif;
-  font-weight: bold;
-  border: 2px solid rgb(255, 255, 255);
   cursor: pointer;
   color: white;
   z-index: 10;
@@ -299,7 +322,7 @@ body, html {
 }
 
 .scroll-top-btn:hover {
-  background: rgba(180, 155, 44, 0.25);
+  background: rgba(255, 255, 255, 0.481);
   color: white;
 }
 
@@ -317,7 +340,7 @@ body, html {
 .dual-section {
   display: flex;
   width: 100%;
-  height: 60vh; /* ou 60vh, etc */
+  height: 40vh; /* ou 60vh, etc */
   margin: 0 auto;
 }
 
@@ -336,7 +359,7 @@ body, html {
 }
 
 .content-side {
-  flex: 1;
+  flex: 0.65; /* Proporção maior que a imagem */
   background-color: black;
   color: rgb(0, 0, 0);
   display: flex;
@@ -378,6 +401,10 @@ body, html {
   background-color:  rgba(180, 155, 44, 0.25);
   color: rgb(0, 0, 0);
 }
+
+
+
+
 
 /* Estilo do botão Explorar */
 .discover-btn-light {
