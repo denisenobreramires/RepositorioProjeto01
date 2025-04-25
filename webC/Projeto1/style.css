@@ -1,3 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.nav-links {
+    margin-top: 50px; /* Aumente o valor conforme necessário */
+    margin-right: 80px; /* Aumente o valor conforme necessário */
+  }
+
+  nav a {
+    color: white !important;
+    font-weight: 500;
+    font-size: 25px;
+  }
+
+  nav a:hover {
+    color: #ddd !important;
+    text-decoration: underline;
+  }
+
 body, html {
   margin: 0;
   padding: 0;
@@ -5,23 +26,9 @@ body, html {
   font-size: 25px;
   font-weight: bold;
 }
-
-.nav-links {
-  margin-top: 35px; /* Aumente o valor conforme necessário */
-  margin-right: 45px; /* Aumente o valor conforme necessário */
-}
-
-  nav a {
-    color: white !important;
-    font-weight: 500;
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-
-     .logo {
-    height: 30px;
-    margin-top: 40px;
+   .logo {
+    height: 40px;
+    margin-top: 50px;
   }
 
   .hero {
@@ -71,40 +78,6 @@ nav,
 }
 
 
-/* Responsividade */
-@media (max-width: 1024px) {
-  .hero-title h1 {
-    font-size: 3rem;
-  }
-
-  body, html {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-title h1 {
-    font-size: 2.5rem;
-  }
-
-  body, html {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    background-position: center center; /* Melhor visual em telas pequenas */
-  }
-
-  .hero-title h1 {
-    font-size: 2rem;
-  }
-
-  body, html {
-    font-size: 18px;
-  }
-}
 
 
 /* Seção de conteúdo inferior */
@@ -225,58 +198,55 @@ nav,
 }
 
 
-
-/* Section Acomodacao/Descobrir */
+/* Seção Acomodação */
 .acomodacao-section {
   display: flex;
-  justify-content: center; /* Centraliza a seção no eixo horizontal */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
   width: 100%;
   height: 55vh; /* Altura ajustável */
   overflow: hidden; /* Impede overflow lateral visível */
   position: relative;
 }
 
-.main-container {
-  display: flex; /* Alinha as divs horizontalmente */
+.acomodacao-main-container {
+  display: flex;
   width: 100%;
   height: 100%;
 }
 
 .image-side {
-  flex: 1; /* Menor proporção */
+  flex: 1; /* A imagem ocupa metade da largura */
   display: flex;
-  justify-content: center; /* Centraliza a imagem no eixo horizontal */
-  align-items: flex-end; /* Alinha a imagem ao fundo da div */
+  justify-content: center; /* Centraliza a imagem horizontalmente */
+  align-items: center; /* Centraliza a imagem verticalmente */
 }
 
-.content-side {
-  flex: 1.5; /* Maior que a imagem */
+.acomodacao-content-side {
+  flex: 1; /* A parte de conteúdo ocupa a outra metade */
   background-color: black;
-  color: white;
+  color: white; /* Texto branco para contrastar com o fundo preto */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  text-align: center;
-  margin-left: -20vw; /* "Avança" para a esquerda */
-  z-index: 1;
+  justify-content: center; /* Garante que o conteúdo fique no centro verticalmente */
+  align-items: center; /* Garante que o conteúdo fique no centro horizontalmente */
+  padding: 2rem; /* Ajustado para um padding mais controlado */
   position: relative;
 }
 
-.image-side img {
-  width: 100%; /* Garante que a imagem ocupe toda a largura */
-  height: auto; /* Ajusta a altura automaticamente */
-  max-height: 100%; /* Garante que a altura não ultrapasse a altura da div */
-  object-fit: cover; /* A imagem vai cobrir toda a área disponível */
-  object-position: bottom; /* A parte inferior da imagem será visível */
+.acomodacao-image-side img {
+  width: 100%; /* A imagem ocupa toda a largura disponível */
+  height: 100%; /* A imagem ocupa toda a altura disponível */
+  object-fit: cover; /* A imagem mantém suas proporções sem distorcer */
+  object-position: center center; /* Centraliza a imagem */
 }
 
-.content-side h2 {
+.section-text {
   font-size: 25px;
   color: #ffffff;
+  letter-spacing: 2px;
+  text-align: center;
   margin-bottom: 2rem;
-  line-height: 1.4;
 }
 
 .descobrir-btn {
@@ -288,7 +258,7 @@ nav,
   font-size: 1.2rem;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
-  cursor: pointer;
+  margin-top: 20px; /* Ajuste para o espaçamento entre o texto e o botão */
 }
 
 .descobrir-btn:hover {
@@ -296,35 +266,6 @@ nav,
   color: black;
 }
 
-/* Hover do botão da esquerda */
-.discover-btn-left:hover {
-  background-color: rgb(0, 0, 0); /* Cor de fundo quando passar o mouse */
-  color: rgb(255, 255, 255); /* Cor do texto quando passar o mouse */
-}
-
-/* Botão de rolar para o topo (scroll) */
-.scroll-top-btn {
-  position: absolute;
-  bottom: 20px; /* distância do fundo da imagem preta */
-  right: 20px;  /* distância da lateral direita */
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* 🔵 deixa o botão redondo */
-  background-color: rgb(0, 0, 0);
-  color: black;
-  cursor: pointer;
-  color: white;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-}
-
-.scroll-top-btn:hover {
-  background: rgba(255, 255, 255, 0.481);
-  color: white;
-}
 
 
 
@@ -334,40 +275,47 @@ nav,
 }
 
 .dual-section.reverse .content-side {
-  background-color:  rgba(180, 155, 44, 0.25)
+  background-color: rgba(180, 155, 44, 0.25); /* Cor de fundo para a parte esquerda */
 }
 
 .dual-section {
   display: flex;
   width: 100%;
-  height: 40vh; /* ou 60vh, etc */
+  height: 55vh; /* Altura ajustável */
   margin: 0 auto;
 }
 
-.image-side,
-.content-side {
-  flex: -10;
-  min-height: 100%; /* Garante que imagem e conteúdo tenham a mesma altura */
-}
-
-
-.image-side img {
+.main-container {
+  display: flex;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center center; /* Centraliza a imagem */
+}
+
+.image-side {
+  flex: 1; /* A imagem ocupará metade da largura */
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza a imagem horizontalmente */
+  align-items: center; /* Centraliza a imagem verticalmente */
 }
 
 .content-side {
-  flex: 0.65; /* Proporção maior que a imagem */
+  flex: 1.2; /* A parte de conteúdo será um pouco menor que a da imagem */
   background-color: black;
-  color: rgb(0, 0, 0);
+  color: white; /* Texto branco para contrastar com o fundo preto */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 9rem;
+  padding: 2rem; /* Ajustado para um padding mais controlado */
   position: relative;
+}
+
+.image-side img {
+  width: 100%; /* A imagem ocupa toda a largura disponível */
+  height: 100%; /* A imagem ocupa toda a altura disponível */
+  object-fit: cover; /* A imagem mantém suas proporções sem distorcer */
+  object-position: center center; /* Centraliza a imagem */
 }
 
 .section-text {
@@ -377,33 +325,6 @@ nav,
   text-align: center;
   margin-bottom: 2rem;
 }
-
-.right-half {
-  background-color: #000;
-  color: rgb(0, 0, 0);
-  flex: 1;
-  position: relative; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.dual-section.reverse .scroll-top-btn {
-  left: 20px;              /* Move para o lado esquerdo */
-  right: auto;             /* Remove o valor padrão à direita */
-  background-color:  rgba(180, 155, 44, 0);   /* Cor de fundo vermelha */
-  border: 2px solid rgb(0, 0, 0); /* Borda branca para contraste */
-  color: rgb(0, 0, 0);            /* Ícone branco */
-}
-
-.dual-section.reverse .scroll-top-btn:hover {
-  background-color:  rgba(180, 155, 44, 0.25);
-  color: rgb(0, 0, 0);
-}
-
-
-
 
 
 /* Estilo do botão Explorar */
@@ -419,46 +340,8 @@ nav,
 }
 
 .discover-btn-light:hover {
-  background: rgb(0, 0, 0);
-  color: white;
-}
-
-
-
-
-/* Section Blog */
-.blog-section {
-  width: 100vw;               /* Ocupa toda a largura da janela */
-  height: 60vh;               /* Ajuste a altura conforme necessário */
-  position: relative;
-  overflow: hidden;           /* Garante que nada vaze para fora */
-}
-
-.blog-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.blog-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(0, 0, 0);
-  color: white;
-  border-radius: 30px;
-  padding: 15px 100px;
-  font-size: 1rem;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s, color 0.3s;
-  z-index: 2;
-}
-.blog-btn:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 
@@ -512,3 +395,48 @@ nav,
 }
 
 
+
+
+/* Botão scroll para o topo */
+.scroll-top-btn {
+  position: absolute;
+  bottom: 40px; /* Distância do fundo da div preta */
+  width: 60px; /* Ajustei o valor do width para 50px */
+  height: 60px;
+  border-radius: 50%; /* Botão redondo */
+  background-color: rgb(0, 0, 0); /* Cor de fundo preta */
+  border: 2px solid #ffffff; /* Borda branca */
+  color: rgb(255, 255, 255); /* Cor do ícone (branco) */
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transições para fundo e cor */
+}
+
+/* Hover - Quando o mouse passa por cima */
+.scroll-top-btn:hover {
+  background-color: rgb(255, 255, 255); /* Fundo branco */
+  color: rgb(0, 0, 0); /* Texto e ícone pretos */
+  border: 2px solid rgb(0, 0, 0); /* Borda preta */
+}
+
+/* Botão Scroll Up na seção "Descobrir" (à direita) */
+.dual-section.reverse .scroll-top-btn {
+  right: 40px; /* Posiciona o botão à direita */
+  left: auto; /* Garante que o botão não fique afetado por outras propriedades */
+}
+
+/* Botão Scroll Up na seção "Explorar" (à esquerda) */
+.dual-section .scroll-top-btn {
+  left: 40px; /* Posiciona o botão à esquerda */
+  right: auto; /* Garante que o botão não fique afetado por outras propriedades */
+}
+
+/* Estilo da imagem no botão */
+.scroll-top-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
