@@ -24,7 +24,7 @@
       <div class="d-flex gap-4 nav-links">
         <a href="Acomodacao.html" class="text-decoration-none">ACOMODAÇÃO</a>
         <a href="Locais.html" class="text-decoration-none">LOCAIS</a>
-        <a href="#Blog.html" class="text-decoration-none">BLOG</a>
+        <a href="index.html" class="text-decoration-none">BLOG</a>
         <a href="Contactos.html" class="text-decoration-none">CONTACTOS</a>
       </div>
     </nav>
@@ -66,44 +66,61 @@
     </div>
   </section>
 
-  <!-- ACOMODACAO -->
-  <section class="acomodacao-section">
-    <div class="acomodacao-container">
-      <div class="image-side">
-        <img src="imagens/pexels-gya-den-768256-2303781 2.png" alt="imagem carrinha">
-      </div>
-
-      <div class="content-side">
-        <h2>Descubra o seu novo<br>escritório</h2>
-        <a href="#" class="descobrir-btn">Descobrir</a>
-
-        <button class="scroll-top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
-      </div>
+<!-- ACOMODACAO -->
+<section class="acomodacao-section">
+  <div class="acomodacao-container">
+    
+    <div class="image-side">
+      <img src="imagens/pexels-gya-den-768256-2303781 2.png" alt="Imagem Carrinha">
     </div>
-  </section>
+
+    <div class="content-side">
+      <div class="content-wrapper">
+        <h2>Descubra o seu novo<br>escritório</h2>
+        <a href="Acomodacao.html" class="descobrir-btn">Descobrir</a>
+      </div>
+      
+      <!-- Scroll Up Button -->
+      <button class="scroll-top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
+    </div>
+
+  </div>
+</section>
+
+
 
   <!-- LOCAIS -->
-  <section class="dual-section reverse">
-    <div class="dual-container">
-      <div class="content-side">
-        <p class="section-text">Temos destinos <br> especiais para você</p>
-        <a href="#" class="discover-btn-light">Explorar</a>
+<section class="locais-section">
+  <div class="locais-container">
+    
+    <!-- Lado esquerdo -->
+    <div class="locais-content-side">
+      <p class="section-text">Temos destinos <br> especiais para você</p>
+      <a href="Locais.html" class="discover-btn-light">Explorar</a>
 
-        <button class="scroll-top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
-      </div>
-
-      <div class="image-side">
-        <img src="imagens/pexels-thatguycraig000-1546898 2.png" alt="imagem estrada">
-      </div>
+      <button class="scroll-top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</button>
     </div>
-  </section>
 
-  <!-- BLOG -->
-  <section class="blog-section text-center">
-    <img src="imagens/pexels-thepaintedsquare-583848 1.png" alt="Imagem do Blog">
-    <a href="#blog" class="blog-btn">BLOG</a>
-    <a href="#" class="discover-btn-right">BLOG</a>
-  </section>
+    <!-- Lado direito -->
+    <div class="locais-image-side">
+      <img src="imagens/pexels-thatguycraig000-1546898 2.png" alt="imagem estrada">
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- BLOG -->
+<section class="blog-section">
+  <div class="blog-bg"></div>
+  <a href="#blog" class="blog-btn">BLOG</a>
+
+  <a href="index.html" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-top-btn">
+    ↑
+  </a>
+</section>
+
 
   <!-- FOOTER -->
   <footer class="footer">

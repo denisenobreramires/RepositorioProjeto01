@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="Locais.css">
-
+</head>
 <body>
 
   <!-- Seção Hero -->
@@ -23,47 +23,43 @@
       <div class="d-flex gap-4 nav-links">
         <a href="Acomodacao.html" class="text-decoration-none">ACOMODAÇÃO</a>
         <a href="Locais.html" class="text-decoration-none">LOCAIS</a>
-        <a href="Blog.html" class="text-decoration-none">BLOG</a>
+        <a href="index.html" class="text-decoration-none">BLOG</a>
         <a href="Contactos.html" class="text-decoration-none">CONTACTOS</a>
       </div>
     </nav>
   </header>
 
-<!-- Formulario -->
-<div class="col-md-6">
-<div class="form-container">
-    <form>
-      <div class="mb-4">
-        <label for="pais" class="form-label text-black">Escolha o país:</label>
-        <select class="form-select" id="pais">
-          <option selected disabled>país</option>
-          <option>Portugal</option>
-  
-        </select>
+  <!-- Layout dividido em duas áreas -->
+  <div class="container-fluid d-flex justify-content-center align-items-start gap-5">
+
+    <!-- Formulário (lado esquerdo) -->
+    <div class="col-md-6">
+      <div class="form-container">
+        <form>
+          <div class="mb-4">
+            <label for="pais" class="form-label text-black">Escolha o país:</label>
+            <select class="form-select" id="pais">
+              <option selected disabled>país</option>
+              <option>Portugal</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label for="cidade" class="form-label text-black">Escolha a cidade:</label>
+            <select class="form-select" id="cidade">
+              <option selected disabled>cidade</option>
+              <option>Porto</option>
+            </select>
+          </div>
+
+          <a href="LocaisPorto.html" class="btn btn-light mt-3 botao-ver">Ver</a>
+        </form>
       </div>
+    </div>
 
-<div class="mb-4">
-        <label for="cidade" class="form-label text-black">Escolha a cidade:</label>
-        <select class="form-select" id="cidade">
-          <option selected disabled>cidade</option>
-          <option>Lisboa</option>
-          <option>Porto</option>
-        </select> 
-      </div>
+ <!-- Espaço vazio (substituindo a imagem/texto) -->
+  <div class="col-md-6"></div>
 
-    <a href="LocaisPorto.html" class="btn btn-light mt-3 botao-ver">Ver</a>
-
-
-
-    </form>
-  </div>
-</div>
-
-
-
-</div>
-    
-  </section>
 
 </body>
 </html>

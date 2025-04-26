@@ -1,29 +1,29 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: 'Jofin Slab', serif;
+    font-family: 'Josefin Slab', serif;
     position: relative;
     overflow-x: hidden;
-  }
+}
 
-  .nav-links {
-    margin-top: 50px; /* Aumente o valor conforme necessário */
-    margin-right: 80px; /* Aumente o valor conforme necessário */
-  }
+.nav-links {
+    margin-top: 50px;
+    margin-right: 80px;
+}
 
-  nav a {
+nav a {
     color: white !important;
     font-weight: 500;
     font-size: 25px;
-  }
+}
 
-  nav a:hover {
+nav a:hover {
     color: #ddd !important;
     text-decoration: underline;
-  }
+}
 
-  /* Imagem de fundo */
-  body::before {
+/* Imagem de fundo */
+body::before {
     content: "";
     position: fixed;
     top: 0;
@@ -35,48 +35,49 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -2;
-  }
+}
 
-  /* Camada escura por cima da imagem */
-  body::after {
+/* Camada escura */
+body::after {
     content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Aumente o valor para escurecer mais (ex: 0.7 ou 0.8) */
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: -1;
-  }
+}
 
-  .logo {
+.logo {
     height: 40px;
     margin-top: 50px;
-  }
+}
 
-  /* Estilo Formulario */
-    form {
+.form-container {
     background-color: #D9D9D9;
-    padding: 4rem; /* Aumenta o padding para dar mais espaço vertical */
+    padding: 2rem; /* reduzido */
     border-radius: 35px;
     backdrop-filter: blur(8px);
-    min-height: 700px; /* Ajuste a altura mínima do formulário */
-    font-family: 'Jura', sans-serif; /* Fonte 'Jura' para o texto */
-    font-size: 20px; 
+    min-height: 600px;
+    font-family: 'Jura', sans-serif;
+    font-size: 20px;
     color: #000000;
     font-weight: bold;
-    margin-left: 450px; /* Aumenta a margem esquerda para empurrar para a direita */
-    margin-top: 50px; /* Aumenta a margem superior para empurrar para baixo */
-  }
+    margin-top: 50px;
+    margin-left: 450px;
+    width: 455px; /* ADICIONADO: define largura fixa */
 
-  .form-container {
-    max-width: 900px; /* ou qualquer valor maior que o anterior (ex: 600px, 800px) */
-    width: 100%;
-    border-radius: 25px;
-    justify-content: flex-start; /* Alinha o formulário à esquerda */
-  }
+}
 
-  /* Aumentar o tamanho do preenchimento do input */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    margin-top: 30px; /* Aumenta o espaço entre o topo e o formulário */
+    }
+
+/* Aumentar o tamanho do preenchimento do input */
   .form-control {
     padding-top: 1.2rem;
     padding-bottom: 1.5rem;
@@ -89,6 +90,7 @@ body {
 
     .form-select {
     height: 80px;          /* define uma altura fixa */
+    width: 320px;         /* define uma largura fixa */
     font-family: 'Jura', sans-serif;
     font-size: 25px;
     font-weight: bold;
@@ -120,21 +122,46 @@ form label {
 }
 
 
-
-/* Autor */
-.quote-author {
-  font-size: 15px;
-  color: white;
-  font-family: 'Jura', sans-serif;
-  text-align: right;
-  margin-right: 100px;
-  font-weight: normal;
+/* Estilo da caixa de texto */
+.caixa-texto {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+    font-family: 'Jura', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: right; /* Alinha o texto à direita */
 }
 
-/* Contêiner opcional para posicionamento */
-.frase-container {
-  position: absolute;
-  top: 25%;
-  right: 0;
-  transform: translateY(-50%);
+/* Layout principal */
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.content-direita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Imagem */
+.content-direita img {
+    width: 460px;
+    height: 360px;
+    margin-bottom: 20px; /* pequeno espaço entre imagem e o texto */
+}
+
+/* Caixa de texto */
+.content-direita .caixa-texto {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+    font-family: 'Jura', sans-serif;
+    font-size: 20px;
+    text-align: left; /* alinha o texto para a esquerda */
+    max-width: 460px; /* opcional: para o texto não ultrapassar a largura da imagem */
 }

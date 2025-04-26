@@ -200,65 +200,68 @@ nav,
 
 /* Seção Acomodação */
 .acomodacao-section {
-  display: flex;
-  justify-content: center; /* Centraliza o conteúdo horizontalmente */
-  align-items: center; /* Centraliza o conteúdo verticalmente */
   width: 100%;
-  height: 55vh; /* Altura ajustável */
-  overflow: hidden; /* Impede overflow lateral visível */
-  position: relative;
+  height: 80vh;
+  margin: 0; /* Garantir sem margem */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.acomodacao-main-container {
+.acomodacao-container {
   display: flex;
   width: 100%;
   height: 100%;
+  margin: 0; /* Sem margens */
+  padding: 0;
 }
 
 .image-side {
-  flex: 1; /* A imagem ocupa metade da largura */
-  display: flex;
-  justify-content: center; /* Centraliza a imagem horizontalmente */
-  align-items: center; /* Centraliza a imagem verticalmente */
+  flex: 0.45;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-.acomodacao-content-side {
-  flex: 1; /* A parte de conteúdo ocupa a outra metade */
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Imagem ocupa totalmente */
+  display: block; /* Evita espaços extras */
+}
+
+.content-side {
+  flex: 0.55;
   background-color: black;
-  color: white; /* Texto branco para contrastar com o fundo preto */
+  color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Garante que o conteúdo fique no centro verticalmente */
-  align-items: center; /* Garante que o conteúdo fique no centro horizontalmente */
-  padding: 2rem; /* Ajustado para um padding mais controlado */
+  justify-content: center;
   position: relative;
+  margin: 0;
+  padding: 3rem;
 }
 
-.acomodacao-image-side img {
-  width: 100%; /* A imagem ocupa toda a largura disponível */
-  height: 100%; /* A imagem ocupa toda a altura disponível */
-  object-fit: cover; /* A imagem mantém suas proporções sem distorcer */
-  object-position: center center; /* Centraliza a imagem */
-}
-
-.section-text {
-  font-size: 25px;
-  color: #ffffff;
-  letter-spacing: 2px;
+.content-wrapper {
   text-align: center;
+}
+
+.content-wrapper h2 {
+  font-size: 2.5rem;
   margin-bottom: 2rem;
 }
 
 .descobrir-btn {
+  display: inline-block;
+  padding: 12px 40px;
   border: 2px solid white;
   border-radius: 30px;
-  padding: 12px 40px;
-  background-color: transparent;
+  background: transparent;
   color: white;
-  font-size: 1.2rem;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s;
-  margin-top: 20px; /* Ajuste para o espaçamento entre o texto e o botão */
+  font-size: 1.2rem;
+  transition: 0.3s;
 }
 
 .descobrir-btn:hover {
@@ -266,83 +269,120 @@ nav,
   color: black;
 }
 
+/* Botão Scroll Up */
+.scroll-top-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);  /* Fundo branco */
+  color: rgb(0, 0, 0);  /* Texto preto */
+  border: 2px solid white;  /* Borda branca */
+  font-size: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  z-index: 10; /* Garante que o botão fique acima de outros elementos */
+}
+
+.scroll-top-btn:hover {
+  background-color: black;  /* Fundo preto ao passar o mouse */
+  color: white;  /* Texto branco ao passar o mouse */
+  border: 2px solid white;  /* Borda branca ao passar o mouse */
+}
 
 
 
-/* Section locais e EXPLORAR */
-.dual-section.reverse .section-text {
+
+/* LOCAIS Section */
+.locais-section {
+  width: 100%;
+  height: 80vh; /* altura boa para manter o impacto */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.locais-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.locais-content-side {
+  flex: 1;
+  background-color: rgba(180, 155, 44, 0.25); /* Cor dourada translúcida */
   color: black;
-}
-
-.dual-section.reverse .content-side {
-  background-color: rgba(180, 155, 44, 0.25); /* Cor de fundo para a parte esquerda */
-}
-
-.dual-section {
-  display: flex;
-  width: 100%;
-  height: 55vh; /* Altura ajustável */
-  margin: 0 auto;
-}
-
-.main-container {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-
-.image-side {
-  flex: 1; /* A imagem ocupará metade da largura */
-  height: 100%;
-  display: flex;
-  justify-content: center; /* Centraliza a imagem horizontalmente */
-  align-items: center; /* Centraliza a imagem verticalmente */
-}
-
-.content-side {
-  flex: 1.2; /* A parte de conteúdo será um pouco menor que a da imagem */
-  background-color: black;
-  color: white; /* Texto branco para contrastar com o fundo preto */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem; /* Ajustado para um padding mais controlado */
   position: relative;
+  padding: 2rem;
 }
 
-.image-side img {
-  width: 100%; /* A imagem ocupa toda a largura disponível */
-  height: 100%; /* A imagem ocupa toda a altura disponível */
-  object-fit: cover; /* A imagem mantém suas proporções sem distorcer */
-  object-position: center center; /* Centraliza a imagem */
+.locais-image-side {
+  flex: 1;
+  overflow: hidden;
 }
 
-.section-text {
-  font-size: 25px;
-  color: #ffffff;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-bottom: 2rem;
+.locais-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
+/* Botão Scroll Up dentro do lado esquerdo */
+.locais-content-side .scroll-top-btn {
+  position: absolute;
+  left: 40px; /* Enconsta na margem esquerda */
+  bottom: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-/* Estilo do botão Explorar */
+.locais-content-side .scroll-top-btn:hover {
+  background-color: white;
+  color: black;
+  border-color: black;
+}
+
+/* Botão Explorar */
 .discover-btn-light {
-  border: 2px solid rgb(0, 0, 0);
+  border: 2px solid black;
   border-radius: 30px;
   padding: 10px 30px;
-  color: rgb(0, 0, 0);
+  color: black;
   background-color: transparent;
   text-decoration: none;
   font-size: 1.2rem;
+  margin-top: 2rem;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .discover-btn-light:hover {
-  background: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background: black;
+  color: white;
 }
+
+/* Texto */
+.section-text {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 
 
 
@@ -378,65 +418,75 @@ nav,
   opacity: 0.7;
 }
 
-/* Estilo do botão BLOG */
-.discover-btn {
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: 30px;
-  padding: 10px 30px;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: background 0.3s;
-}
 
-.discover-btn:hover {
-  background: rgb(0, 0, 0);
-  color: black;
-}
-
-
-
-
-/* Botão scroll para o topo */
-.scroll-top-btn {
-  position: absolute;
-  bottom: 40px; /* Distância do fundo da div preta */
-  width: 60px; /* Ajustei o valor do width para 50px */
-  height: 60px;
-  border-radius: 50%; /* Botão redondo */
-  background-color: rgb(0, 0, 0); /* Cor de fundo preta */
-  border: 2px solid #ffffff; /* Borda branca */
-  color: rgb(255, 255, 255); /* Cor do ícone (branco) */
-  cursor: pointer;
-  z-index: 10;
+/*BLOG Section */
+.blog-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transições para fundo e cor */
 }
 
-/* Hover - Quando o mouse passa por cima */
+/* Imagem de fundo da seção */
+.blog-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('imagens/pexels-thepaintedsquare-583848 1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Botão BLOG no centro */
+.blog-btn {
+  position: relative;
+  z-index: 2;
+  padding: 15px 150px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 45px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.blog-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Botão Scroll Up encostado à direita embaixo */
+.scroll-top-btn {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border: 2px solid black;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #000000;
+  z-index: 2;
+}
+
 .scroll-top-btn:hover {
-  background-color: rgb(255, 255, 255); /* Fundo branco */
-  color: rgb(0, 0, 0); /* Texto e ícone pretos */
-  border: 2px solid rgb(0, 0, 0); /* Borda preta */
-}
-
-/* Botão Scroll Up na seção "Descobrir" (à direita) */
-.dual-section.reverse .scroll-top-btn {
-  right: 40px; /* Posiciona o botão à direita */
-  left: auto; /* Garante que o botão não fique afetado por outras propriedades */
-}
-
-/* Botão Scroll Up na seção "Explorar" (à esquerda) */
-.dual-section .scroll-top-btn {
-  left: 40px; /* Posiciona o botão à esquerda */
-  right: auto; /* Garante que o botão não fique afetado por outras propriedades */
-}
-
-/* Estilo da imagem no botão */
-.scroll-top-img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-color: rgb(255, 255, 255);
 }
